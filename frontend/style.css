@@ -1,0 +1,115 @@
+/* Estilo simples e limpo para manter a interface legível e direta. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e6e6e6;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+input[type="file"],
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #8aa8e6;
+  cursor: not-allowed;
+}
+
+.file-label {
+  display: inline-block;
+  margin-top: 6px;
+  color: #2f6fed;
+  cursor: pointer;
+}
+
+.status-box,
+.result-box,
+.answer-box,
+.sources-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+}
+
+.result-box {
+  background: #f2fbf4;
+  border-color: #ccebd4;
+}
+
+.answer-box {
+  white-space: pre-wrap;
+  background: #f8f8ff;
+  border-color: #d9d9ff;
+}
+
+.sources-box ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.95rem;
+}

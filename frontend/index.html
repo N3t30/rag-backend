@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Estrutura principal da interface simples para testar o fluxo RAG -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG PDF - Assistente Local</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>RAG PDF - Assistente Local</h1>
+        <p class="status-pill" id="backendStatus">Verificando backend...</p>
+      </header>
+
+      <section class="card">
+        <h2>Upload de PDF</h2>
+        <label class="file-label" for="pdfInput">Escolher arquivo PDF</label>
+        <input id="pdfInput" type="file" accept=".pdf" />
+
+        <button id="ingestButton" type="button">Indexar PDF</button>
+
+        <div id="ingestStatus" class="status-box" aria-live="polite">
+          Aguardando arquivo PDF...
+        </div>
+
+        <div id="ingestResult" class="result-box" hidden></div>
+      </section>
+
+      <section class="card">
+        <h2>Perguntar</h2>
+        <p id="queryHint" class="hint">
+          Ainda não há conteúdo indexado. Faça o upload de um PDF primeiro.
+        </p>
+
+        <textarea
+          id="questionInput"
+          rows="4"
+          placeholder="Digite sua pergunta sobre o conteúdo do PDF..."
+        ></textarea>
+
+        <button id="queryButton" type="button">Perguntar</button>
+
+        <div id="queryStatus" class="status-box" aria-live="polite">
+          Aguardando pergunta...
+        </div>
+
+        <div id="answerBox" class="answer-box" hidden></div>
+
+        <div id="sourcesBox" class="sources-box" hidden>
+          <h3>Fontes</h3>
+          <ul id="sourcesList"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
