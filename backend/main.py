@@ -80,6 +80,8 @@ async def ingest_pdf(file: UploadFile = File(...)) -> dict:
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from exc
     except Exception as exc:
+        import traceback
+        traceback.print_exc()
         raise HTTPException(
             status_code=500,
             detail=f"Erro inesperado durante a ingestão: {exc}",

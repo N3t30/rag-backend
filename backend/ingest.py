@@ -6,9 +6,9 @@ from typing import List, Tuple
 from uuid import uuid4
 
 import requests
-from langchain.storage import LocalFileStore
-from langchain_core.documents import Document
-from langchain_ollama import ChatOllama, OllamaEmbeddings
+from langchain.storage import LocalFileStore 
+from langchain_core.documents import Document 
+from langchain_ollama import ChatOllama, OllamaEmbeddings 
 
 try:
     from langchain_chroma import Chroma
@@ -238,6 +238,14 @@ def ingest_pdf(pdf_path: str | Path) -> dict:
     for kind, content in elements:
         doc_id = str(uuid4())
         summary = _summarize_content(chat_model, content)
+
+        print("\n" + "=" * 80)
+        print("CONTEÚDO ORIGINAL:")
+        print(content[:500])
+        print("\nRESUMO GERADO:")
+        print(summary)
+        print("=" * 80)
+
         docstore.mset([(doc_id, content.encode("utf-8"))])
         if vectorstore is not None:
             vectorstore.add_documents(
@@ -248,9 +256,8 @@ def ingest_pdf(pdf_path: str | Path) -> dict:
         else:
             indexed_texts += 1
 
-    if vectorstore is not None:
-        vectorstore.persist()
-
+    # if vectorstore is not None:
+    #     # vectorstore.persist()
     return {
         "file": path.name,
         "texts_indexed": indexed_texts,

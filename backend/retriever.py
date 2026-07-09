@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from langchain.retrievers.multi_vector import MultiVectorRetriever
-from langchain.storage import LocalFileStore
+from langchain.storage import LocalFileStore 
 from langchain_ollama import ChatOllama, OllamaEmbeddings
 
 try:
@@ -18,7 +18,6 @@ try:
         DEFAULT_TOP_K,
         EMBEDDING_MODEL,
         OLLAMA_HOST,
-        REQUEST_TIMEOUT_SECONDS,
     )
 except ImportError:  # pragma: no cover - fallback for direct script execution
     from config import (
@@ -28,7 +27,6 @@ except ImportError:  # pragma: no cover - fallback for direct script execution
         DEFAULT_TOP_K,
         EMBEDDING_MODEL,
         OLLAMA_HOST,
-        REQUEST_TIMEOUT_SECONDS,
     )
 
 
